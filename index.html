@@ -1,324 +1,532 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="en-GB" data-active="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HKeyboard 隐私政策</title>
-<meta name="description" content="HProductions 旗下 HKeyboard 的隐私政策。不收集数据，无遥测，无追踪。">
+<title>HKeyboard Privacy Policy / HKeyboard 隐私政策</title>
+<meta name="description" content="Privacy policy for HKeyboard by HProductions. Your typing stays on your device. No accounts, no analytics, no tracking.">
+<meta name="theme-color" content="#e8ebf0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0f13" media="(prefers-color-scheme: dark)">
 <style>
+:root{
+  /* chassis / cap / ink -- the page is built like a keyboard: caps sitting on a chassis */
+  --chassis:#e8ebf0;
+  --chassis-2:#dfe3ea;
+  --cap:#ffffff;
+  --cap-top:#ffffff;
+  --cap-skirt:#c6ccd8;
+  --cap-line:#dfe3ea;
+  --ink:#14171d;
+  --ink-2:#565d6b;
+  --ink-3:#7d8593;
+  --accent:#4b3fa8;
+  --accent-soft:#ece9fb;
+  --shadow:rgba(20,23,29,.10);
+  --shadow-2:rgba(20,23,29,.06);
+}
+@media (prefers-color-scheme:dark){
   :root{
-    --paper:#fbfbfa;
-    --ink:#16181d;
-    --ink-soft:#4a4f5a;
-    --rule:#dcdde0;
-    --key:#eceded;
-    --accent:#2f5d62;
+    --chassis:#0d0f13;
+    --chassis-2:#14171d;
+    --cap:#1a1e26;
+    --cap-top:#20252e;
+    --cap-skirt:#080a0d;
+    --cap-line:#2a303a;
+    --ink:#e9ecf1;
+    --ink-2:#a3abb8;
+    --ink-3:#79808d;
+    --accent:#b3a8ff;
+    --accent-soft:#1e1b33;
+    --shadow:rgba(0,0,0,.45);
+    --shadow-2:rgba(0,0,0,.28);
   }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --paper:#111316;
-      --ink:#e8e9ea;
-      --ink-soft:#a2a7b0;
-      --rule:#2a2d33;
-      --key:#1c1f24;
-      --accent:#7fb3b5;
-    }
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:ui-sans-serif,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC",sans-serif;
-    font-size:17px;
-    line-height:1.8;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:44rem;margin:0 auto;padding:3.5rem 1.5rem 6rem}
-  header{border-bottom:1px solid var(--rule);padding-bottom:1.75rem;margin-bottom:2.5rem}
-  .mark{
-    display:inline-block;
-    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    font-size:.8rem;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    background:var(--key);
-    border:1px solid var(--rule);
-    border-radius:6px;
-    padding:.3rem .6rem;
-    margin-bottom:1.25rem;
-  }
-  h1{
-    font-size:2rem;
-    line-height:1.35;
-    font-weight:640;
-    margin:0 0 .75rem;
-  }
-  .meta{
-    font-size:.85rem;
-    color:var(--ink-soft);
-    margin:0;
-  }
-  h2{
-    font-size:1.08rem;
-    font-weight:660;
-    margin:2.75rem 0 .85rem;
-    padding-top:1.25rem;
-    border-top:1px solid var(--rule);
-  }
-  h2:first-of-type{border-top:0;padding-top:0}
-  p{margin:0 0 1.05rem}
-  ul{margin:0 0 1.05rem;padding-left:1.35rem}
-  li{margin-bottom:.45rem}
-  strong{font-weight:660}
-  a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;word-break:break-all}
-  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-  .lede{font-size:1.02rem;color:var(--ink-soft)}
-  footer{
-    margin-top:3.5rem;
-    padding-top:1.5rem;
-    border-top:1px solid var(--rule);
-    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    font-size:.78rem;
-    color:var(--ink-soft);
-  }
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  margin:0;
+  background:var(--chassis);
+  background-image:radial-gradient(120% 60% at 50% -10%, var(--chassis-2) 0%, var(--chassis) 60%);
+  color:var(--ink);
+  font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:17px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+html[lang^="zh"] body{
+  font-family:ui-sans-serif,-apple-system,"PingFang SC","HarmonyOS Sans SC","Source Han Sans SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;
+  line-height:1.85;
+}
+
+.mono{
+  font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  font-variant-ligatures:none;
+}
+
+.shell{max-width:47rem;margin:0 auto;padding:1.25rem 1.25rem 5rem}
+
+/* ---------- top bar : brand + language keys ---------- */
+.bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.75rem 0 2.5rem;
+}
+.brand{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.72rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+}
+.switch{display:flex;gap:.4rem}
+
+/* the keycap: one shape, reused for the language switch and the claim tiles */
+.cap{
+  background:var(--cap);
+  background-image:linear-gradient(180deg,var(--cap-top),var(--cap));
+  border:1px solid var(--cap-line);
+  border-radius:11px;
+  box-shadow:0 2px 0 var(--cap-skirt), 0 4px 10px var(--shadow-2);
+}
+
+.switch button{
+  -webkit-appearance:none;appearance:none;
+  font:inherit;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.78rem;
+  letter-spacing:.06em;
+  color:var(--ink-2);
+  padding:.5rem .85rem;
+  cursor:pointer;
+  transition:transform .09s ease, box-shadow .09s ease, color .12s ease;
+}
+.switch button:hover{color:var(--ink)}
+.switch button:active{
+  transform:translateY(2px);
+  box-shadow:0 0 0 var(--cap-skirt), 0 1px 4px var(--shadow-2);
+}
+.switch button[aria-pressed="true"]{
+  color:var(--accent);
+  border-color:var(--accent);
+  box-shadow:0 2px 0 var(--cap-skirt), 0 0 0 1px var(--accent) inset;
+}
+.switch button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.switch button{transition:none}}
+
+/* ---------- hero : the thesis ---------- */
+.hero{padding:0 0 2.75rem}
+h1{
+  font-size:clamp(2rem,6.2vw,3.1rem);
+  line-height:1.08;
+  font-weight:680;
+  letter-spacing:-.03em;
+  margin:0 0 1.1rem;
+  max-width:16ch;
+}
+html[lang^="zh"] h1{
+  line-height:1.3;
+  letter-spacing:-.01em;
+  max-width:15ch;
+  font-weight:700;
+}
+html[lang^="zh"] h1 em{white-space:nowrap}
+html[lang^="zh"] .stamp{letter-spacing:.06em}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{
+  font-size:1.06rem;
+  color:var(--ink-2);
+  margin:0;
+  max-width:52ch;
+}
+.stamp{
+  display:block;
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  margin:1.75rem 0 0;
+}
+
+/* ---------- claim tiles : four caps ---------- */
+.claims{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:.55rem;
+  margin:0 0 3.25rem;
+  padding:0;
+  list-style:none;
+}
+.claims li{
+  padding:.9rem .7rem 1rem;
+  text-align:center;
+  font-size:.74rem;
+  line-height:1.35;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--ink-2);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+html[lang^="zh"] .claims li{
+  font-family:inherit;
+  text-transform:none;
+  letter-spacing:.02em;
+  font-size:.82rem;
+}
+.claims b{display:block;font-size:1.05rem;font-weight:660;color:var(--ink);letter-spacing:-.01em}
+@media (max-width:34rem){
+  .claims{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ---------- sections ---------- */
+section{
+  padding:1.9rem 0 .35rem;
+  border-top:1px solid var(--cap-line);
+}
+section:first-of-type{border-top:0;padding-top:0}
+.eyebrow{
+  display:block;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.68rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 .5rem;
+}
+html[lang^="zh"] .eyebrow{font-family:inherit;letter-spacing:.14em;font-size:.72rem}
+h2{
+  font-size:1.22rem;
+  font-weight:660;
+  letter-spacing:-.015em;
+  margin:0 0 .9rem;
+}
+html[lang^="zh"] h2{letter-spacing:0}
+p{margin:0 0 1rem}
+ul{margin:0 0 1rem;padding-left:0;list-style:none}
+li{margin:0 0 .55rem;padding-left:1.35rem;position:relative}
+ul li::before{
+  content:"";
+  position:absolute;
+  left:.15rem;top:.72em;
+  width:.42rem;height:.42rem;
+  border-radius:2px;
+  background:var(--accent);
+  opacity:.55;
+}
+.claims li::before{display:none}
+.claims li{padding-left:.7rem;margin:0}
+strong{font-weight:660}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;word-break:break-word}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+/* the pull-out block for defined terms */
+.term{
+  margin:0 0 1rem;
+  padding:.95rem 1.05rem;
+  border-radius:12px;
+  background:var(--accent-soft);
+  border:1px solid var(--cap-line);
+}
+.term p{margin:0}
+.term p + p{margin-top:.7rem}
+
+.contact{
+  margin-top:1.9rem;
+  padding:1.15rem 1.2rem;
+  text-align:center;
+}
+.contact .mono{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:.4rem}
+html[lang^="zh"] .contact .mono{font-family:inherit;text-transform:none}
+.contact a{font-size:1.02rem;text-decoration-thickness:1px}
+
+footer{
+  margin-top:3rem;
+  padding-top:1.4rem;
+  border-top:1px solid var(--cap-line);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.72rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  text-align:center;
+}
+
+/* ---------- language visibility ---------- */
+[data-lang]{display:none}
+html[data-active="en"] [data-lang="en"]{display:block}
+html[data-active="zh"] [data-lang="zh"]{display:block}
+html[data-active="both"] [data-lang]{display:block}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="shell">
 
-<header>
-  <span class="mark">HProductions</span>
-  <h1>HKeyboard 隐私政策</h1>
-  <p class="meta">最后更新：2026 年 8 月 26 日</p>
-</header>
+  <div class="bar">
+    <span class="brand">HProductions</span>
+    <div class="switch" role="group" aria-label="Language / 语言">
+      <button type="button" class="cap" data-set="en" aria-pressed="true" lang="en">EN</button>
+      <button type="button" class="cap" data-set="zh" aria-pressed="false" lang="zh-Hans">中文</button>
+    </div>
+  </div>
 
-<p class="lede">HKeyboard 是一款键盘应用。键盘能够看到您输入的全部内容，因此我们在设计时始终坚持一个原则：您的输入内容只保留在您的设备上。本应用没有账户、无需登录，不含任何统计分析、广告或追踪功能。</p>
+  <!-- ============================ ENGLISH ============================ -->
+  <main data-lang="en" lang="en-GB">
 
-<h2>摘要</h2>
-<ul>
-  <li>我们不收集、不传输、不出售您的个人数据。</li>
-  <li>您输入的所有内容都保留在您的设备上。</li>
-  <li>应用中不含任何统计分析、遥测、广告或追踪组件。</li>
-  <li>唯一的网络活动均为可选项，且必须由您主动发起，详见下文。</li>
-</ul>
+    <div class="hero">
+      <h1>Your typing never leaves <em>this phone</em>.</h1>
+      <p class="lede">HKeyboard is a keyboard app. Keyboards see everything you type, so we built this one to keep what you type where it belongs &mdash; on your device. No account, no sign-in, no analytics, no advertising, no tracking of any kind.</p>
+      <span class="stamp">HKeyboard Privacy Policy &middot; Last updated 26 August 2026</span>
+    </div>
 
-<h2>HKeyboard 在您设备上保存的内容</h2>
-<p>以下内容保存在应用位于您手机上的私有存储空间内。它们不会被上传到任何地方，其他应用也无法读取。</p>
-<p><strong>个人词库。</strong>为改进联想输入与自动更正，HKeyboard 会学习您输入的词语和词组搭配。学习过程完全在您的设备上进行。您可以随时在“设置”中清除个人词库。</p>
-<p><strong>剪贴板历史。</strong>如果您启用剪贴板面板，HKeyboard 会保存最近复制的内容，方便您再次粘贴。这些内容保存在本地，可以单条删除，也可以在“设置”中一次性清空。如果您未启用该功能，则不会保存任何剪贴板历史。</p>
-<p><strong>快捷短语。</strong>HKeyboard 可以主动询问您是否保存常用文本，例如电子邮箱地址或电话号码。只有在您明确接受该提示后才会保存——不存在任何自动保存行为。快捷短语保存在本地，可随时删除。</p>
-<p><strong>设置与偏好。</strong>您选择的主题、语言、布局和操作选项。</p>
+    <ul class="claims">
+      <li class="cap"><b>0</b>Accounts</li>
+      <li class="cap"><b>0</b>Trackers</li>
+      <li class="cap"><b>0</b>Adverts</li>
+      <li class="cap"><b>0</b>Servers</li>
+    </ul>
 
-<h2>HKeyboard 不会做的事</h2>
-<ul>
-  <li>不会记录或传输您的按键内容。</li>
-  <li>不会在密码输入框中学习或保存文本，也不会在密码框中提供自动更正或联想输入。</li>
-  <li>不会将银行卡号、一次性验证码或其他敏感输入保存为快捷短语。</li>
-  <li>不会上传您的个人词库、剪贴板内容或快捷短语。</li>
-  <li>不会读取您的通讯录、照片、文件、位置或通话记录。</li>
-  <li>不含任何统计分析或崩溃上报服务。</li>
-</ul>
+    <section>
+      <span class="eyebrow">At a glance</span>
+      <h2>The short version</h2>
+      <ul>
+        <li>We do not collect, transmit or sell your personal data.</li>
+        <li>Everything you type stays on your device.</li>
+        <li>The app contains no analytics, telemetry, advertising or tracking libraries.</li>
+        <li>The only network activity is optional and started by you. Both cases are described below.</li>
+      </ul>
+    </section>
 
-<h2>无痕模式</h2>
-<p>开启无痕模式后，HKeyboard 不会将您输入的任何内容加入个人词库或剪贴板历史。联想输入与自动更正仍会基于现有词库正常工作。开启无痕模式不会删除此前已保存的数据。</p>
+    <section>
+      <span class="eyebrow">On device</span>
+      <h2>What HKeyboard keeps, and where</h2>
+      <p>These live in the app's private storage on your phone. They are not uploaded anywhere and cannot be read by other apps.</p>
+      <div class="term">
+        <p><strong>Personal dictionary.</strong> To improve prediction and autocorrect, HKeyboard learns words and word pairs you type. This happens entirely on your device. Clear it at any time from Settings.</p>
+        <p><strong>Clipboard history.</strong> If you turn on the clipboard panel, recently copied items are saved so you can paste them again. Stored locally, deletable individually, and clearable in full from Settings. Leave the feature off and nothing is kept.</p>
+        <p><strong>Snippets.</strong> HKeyboard can offer to save text you type often, such as an email address or phone number. It is saved only when you accept the offer &mdash; never automatically. Stored locally, deletable at any time.</p>
+        <p><strong>Settings.</strong> Your theme, languages, layout and behaviour choices.</p>
+      </div>
+    </section>
 
-<h2>网络活动</h2>
-<p>HKeyboard 可完全离线使用。仅在以下两种情况下会使用网络，且两者均为可选。</p>
-<p><strong>下载词库。</strong>如果您选择为某种语言下载扩展词库，HKeyboard 会从 GitHub 上的一个固定地址（<a href="https://github.com/GBTechReviews/harmonikeyboard-dicts">github.com/GBTechReviews/harmonikeyboard-dicts</a>）获取词库文件。这是一次普通的下载请求，不会随请求发送任何关于您本人、您的设备或您输入内容的信息。下载绝不会自行开始——只有在您点击下载时才会进行。作为托管方，GitHub 可能会像任何网站服务器一样按常规记录该请求；这不在我们的控制范围内，我们也不会收到这些日志。</p>
-<p><strong>手写识别模型。</strong>如果您使用手写输入，应用可能需要下载识别模型。该下载由 Google ML Kit 处理，来源为 Google 的服务器。模型下载到您的设备后，所有手写识别均在您的设备本地完成——您的手写内容不会被发送到任何地方。模型下载适用 <a href="https://policies.google.com/privacy">Google 的隐私政策</a>。</p>
-<p>如果您从不使用上述功能，HKeyboard 不会建立任何网络连接。</p>
+    <section>
+      <span class="eyebrow">Never</span>
+      <h2>What HKeyboard does not do</h2>
+      <ul>
+        <li>It does not record or transmit your keystrokes.</li>
+        <li>It does not learn from or store text in password fields, and offers no autocorrect or predictions in them.</li>
+        <li>It does not save payment card numbers, one-time codes or similar sensitive input as snippets.</li>
+        <li>It does not upload your personal dictionary, clipboard or snippets.</li>
+        <li>It does not read your contacts, photos, files, location or call history.</li>
+        <li>It contains no analytics or crash-reporting services.</li>
+      </ul>
+    </section>
 
-<h2>语音输入</h2>
-<p>如果您使用语音输入，HKeyboard 会请求麦克风权限，并将您的语音转换为文字。音频仅用于转写这一目的。HKeyboard 不会录制、保存或传输您的音频，也不会保留转写文本。麦克风权限仅在您实际使用语音输入期间使用，您可以随时在手机设置中拒绝或撤销该权限；键盘的其余功能在没有该权限的情况下仍可正常使用。</p>
+    <section>
+      <span class="eyebrow">Mode</span>
+      <h2>Incognito mode</h2>
+      <p>With incognito mode on, nothing you type is added to the personal dictionary or clipboard history. Prediction and autocorrect keep working from the existing dictionary. Turning it on does not delete anything already saved.</p>
+    </section>
 
-<h2>权限说明</h2>
-<ul>
-  <li><strong>网络</strong>——仅用于上文所述的可选下载。</li>
-  <li><strong>麦克风</strong>——仅用于语音输入，且仅在语音输入激活期间使用。</li>
-  <li><strong>振动</strong>——在您启用按键震动反馈时使用。</li>
-</ul>
+    <section>
+      <span class="eyebrow">Network</span>
+      <h2>When the app uses the internet</h2>
+      <p>HKeyboard works fully offline. There are exactly two exceptions, and both are optional.</p>
+      <div class="term">
+        <p><strong>Downloadable dictionaries.</strong> If you choose to download an expanded dictionary for a language, HKeyboard fetches a file from one fixed address on GitHub (<a href="https://github.com/GBTechReviews/harmonikeyboard-dicts">github.com/GBTechReviews/harmonikeyboard-dicts</a>). It is a plain download. Nothing about you, your device or your typing is sent with it, and a download never starts on its own &mdash; only when you tap to start it. GitHub, as host, may log the request the way any web server does; that is outside our control and we never see those logs.</p>
+        <p><strong>Handwriting recognition models.</strong> If you use handwriting input, the app may need a recognition model. That download is handled by Google ML Kit from Google's servers. Once the model is on your phone, recognition runs on your phone &mdash; your handwriting is not sent anywhere. The download itself is covered by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+      </div>
+      <p>If you use neither feature, HKeyboard makes no network connections at all.</p>
+    </section>
 
-<h2>儿童</h2>
-<p>HKeyboard 并非面向儿童设计，我们不会在知情的情况下收集任何人的数据，儿童亦然。</p>
+    <section>
+      <span class="eyebrow">Microphone</span>
+      <h2>Voice input</h2>
+      <p>Using voice input requires microphone access. Your speech is converted to text for that purpose alone. HKeyboard does not record, store or transmit your audio, and keeps no transcripts. The microphone is used only while voice input is active, and you can refuse or revoke the permission at any time in your phone's settings &mdash; the rest of the keyboard carries on working without it.</p>
+    </section>
 
-<h2>您的权利</h2>
-<p>由于我们不持有关于您的任何数据，因此不存在需要我们代为披露、更正或删除的内容。应用产生的所有数据都保存在您的设备上，完全由您掌控：可在“设置”中清除，或卸载应用以移除全部数据。</p>
+    <section>
+      <span class="eyebrow">Permissions</span>
+      <h2>What the app asks for</h2>
+      <ul>
+        <li><strong>Internet</strong> &mdash; only for the optional downloads above.</li>
+        <li><strong>Microphone</strong> &mdash; only for voice input, only while it is active.</li>
+        <li><strong>Vibrate</strong> &mdash; for key-press haptics, if you enable them.</li>
+      </ul>
+    </section>
 
-<h2>政策变更</h2>
-<p>若本政策发生变更，更新后的版本将发布于本页面，并在页首标注新的日期。重大变更也会在应用的更新日志中说明。</p>
+    <section>
+      <span class="eyebrow">Control</span>
+      <h2>Your rights</h2>
+      <p>We hold no data about you, so there is nothing for us to disclose, correct or delete on your behalf. Everything the app creates sits on your device and is yours to remove: clear it from Settings, or uninstall the app to take all of it with you.</p>
+    </section>
 
-<h2>联系方式</h2>
-<p>如对本政策有任何疑问，请联系：<a href="mailto:huaweiproreview@gmail.com</a></p>
+    <section>
+      <span class="eyebrow">Scope</span>
+      <h2>Children</h2>
+      <p>HKeyboard is not directed at children, and we knowingly collect data from no one &mdash; children included.</p>
+    </section>
 
-<footer>HKeyboard — HProductions</footer>
+    <section>
+      <span class="eyebrow">Updates</span>
+      <h2>Changes to this policy</h2>
+      <p>Any revision is published at this address with a new date at the top. Material changes are also noted in the app's changelog.</p>
+    </section>
+
+    <div class="contact cap">
+      <span class="mono">Questions about this policy</span>
+      <a href="mailto:huaweiproreview@gmail.com">huaweiproreview@gmail.com</a>
+    </div>
+
+  </main>
+
+  <!-- ============================ 中文 ============================ -->
+  <main data-lang="zh" lang="zh-Hans">
+
+    <div class="hero">
+      <h1>您输入的内容，<em>绝不离开这部手机</em>。</h1>
+      <p class="lede">HKeyboard 是一款键盘应用。键盘能看到您输入的一切，因此我们从一开始就定下规矩：您输入的内容只留在您的设备上。没有账户、无需登录，不含任何统计分析、广告或追踪。</p>
+      <span class="stamp">HKeyboard 隐私政策 &middot; 最后更新 2026 年 8 月 26 日</span>
+    </div>
+
+    <ul class="claims">
+      <li class="cap"><b>0</b>账户</li>
+      <li class="cap"><b>0</b>追踪</li>
+      <li class="cap"><b>0</b>广告</li>
+      <li class="cap"><b>0</b>服务器</li>
+    </ul>
+
+    <section>
+      <span class="eyebrow">概览</span>
+      <h2>简短版本</h2>
+      <ul>
+        <li>我们不收集、不传输、不出售您的个人数据。</li>
+        <li>您输入的所有内容都保留在您的设备上。</li>
+        <li>应用中不含任何统计分析、遥测、广告或追踪组件。</li>
+        <li>唯一的网络活动均为可选，且必须由您主动发起。两种情形详见下文。</li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="eyebrow">本机存储</span>
+      <h2>HKeyboard 保存了什么，存在哪里</h2>
+      <p>以下内容保存在应用位于您手机上的私有存储空间内，不会上传到任何地方，其他应用也无法读取。</p>
+      <div class="term">
+        <p><strong>个人词库。</strong>为改进联想输入与自动更正，HKeyboard 会学习您输入的词语与词组搭配。该过程完全在您的设备上进行，可随时在“设置”中清除。</p>
+        <p><strong>剪贴板历史。</strong>若您开启剪贴板面板，最近复制的内容会被保存，方便再次粘贴。内容保存在本地，可单条删除，也可在“设置”中一次性清空。不开启该功能，则不保存任何记录。</p>
+        <p><strong>快捷短语。</strong>HKeyboard 可以询问您是否保存常用文本，例如邮箱地址或电话号码。只有在您接受提示后才会保存——绝无自动保存。内容保存在本地，可随时删除。</p>
+        <p><strong>设置项。</strong>您选择的主题、语言、布局与操作偏好。</p>
+      </div>
+    </section>
+
+    <section>
+      <span class="eyebrow">绝不进行</span>
+      <h2>HKeyboard 不会做的事</h2>
+      <ul>
+        <li>不会记录或传输您的按键内容。</li>
+        <li>不会在密码输入框中学习或保存文本，也不在其中提供自动更正或联想输入。</li>
+        <li>不会将银行卡号、一次性验证码等敏感输入保存为快捷短语。</li>
+        <li>不会上传您的个人词库、剪贴板内容或快捷短语。</li>
+        <li>不会读取您的通讯录、照片、文件、位置或通话记录。</li>
+        <li>不含任何统计分析或崩溃上报服务。</li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="eyebrow">模式</span>
+      <h2>无痕模式</h2>
+      <p>开启无痕模式后，您输入的任何内容都不会被加入个人词库或剪贴板历史。联想输入与自动更正仍会基于现有词库正常工作。开启该模式不会删除此前已保存的数据。</p>
+    </section>
+
+    <section>
+      <span class="eyebrow">网络</span>
+      <h2>应用在何时使用网络</h2>
+      <p>HKeyboard 可完全离线使用。仅有两种例外情形，且均为可选。</p>
+      <div class="term">
+        <p><strong>下载词库。</strong>若您选择为某种语言下载扩展词库，HKeyboard 会从 GitHub 上的一个固定地址（<a href="https://github.com/GBTechReviews/harmonikeyboard-dicts">github.com/GBTechReviews/harmonikeyboard-dicts</a>）获取词库文件。这只是一次普通下载，不会随请求发送任何关于您本人、您的设备或您输入内容的信息；下载绝不会自行开始，只在您点击后进行。作为托管方，GitHub 可能像任何网站服务器一样记录该请求；这不在我们的控制范围内，我们也从不接触这些日志。</p>
+        <p><strong>手写识别模型。</strong>若您使用手写输入，应用可能需要下载识别模型。该下载由 Google ML Kit 从 Google 服务器完成。模型下载到手机后，识别全程在本机进行——您的手写内容不会被发送到任何地方。下载本身适用 <a href="https://policies.google.com/privacy">Google 隐私政策</a>。</p>
+      </div>
+      <p>若这两项功能您都不使用，HKeyboard 不会建立任何网络连接。</p>
+    </section>
+
+    <section>
+      <span class="eyebrow">麦克风</span>
+      <h2>语音输入</h2>
+      <p>使用语音输入需要麦克风权限。您的语音仅用于转写为文字这一目的。HKeyboard 不会录制、保存或传输您的音频，也不保留转写文本。麦克风仅在语音输入激活期间使用，您可随时在手机设置中拒绝或撤销该权限——键盘的其余功能不受影响，照常使用。</p>
+    </section>
+
+    <section>
+      <span class="eyebrow">权限</span>
+      <h2>应用申请的权限</h2>
+      <ul>
+        <li><strong>网络</strong>——仅用于上述可选下载。</li>
+        <li><strong>麦克风</strong>——仅用于语音输入，且仅在其激活期间。</li>
+        <li><strong>振动</strong>——在您启用按键震动反馈时使用。</li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="eyebrow">您的掌控</span>
+      <h2>您的权利</h2>
+      <p>我们不持有关于您的任何数据，因此不存在需要我们代为披露、更正或删除的内容。应用产生的一切都在您的设备上，由您决定去留：在“设置”中清除，或卸载应用即可一并移除。</p>
+    </section>
+
+    <section>
+      <span class="eyebrow">适用范围</span>
+      <h2>儿童</h2>
+      <p>HKeyboard 并非面向儿童设计。我们不会在知情的情况下收集任何人的数据，儿童亦然。</p>
+    </section>
+
+    <section>
+      <span class="eyebrow">更新</span>
+      <h2>政策变更</h2>
+      <p>任何修订都会发布于本页面，并在页首标注新的日期。重大变更也会在应用的更新日志中说明。</p>
+    </section>
+
+    <div class="contact cap">
+      <span class="mono">如对本政策有任何疑问</span>
+      <a href="mailto:huaweiproreview@gmail.com">huaweiproreview@gmail.com</a>
+    </div>
+
+  </main>
+
+  <footer>HKeyboard &middot; HProductions</footer>
 
 </div>
-</body>
 
-<!DOCTYPE html>
-<html lang="en-GB">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HKeyboard Privacy Policy</title>
-<meta name="description" content="Privacy policy for HKeyboard by HProductions. No data collection, no telemetry, no tracking.">
-<style>
-  :root{
-    --paper:#fbfbfa;
-    --ink:#16181d;
-    --ink-soft:#4a4f5a;
-    --rule:#dcdde0;
-    --key:#eceded;
-    --accent:#2f5d62;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --paper:#111316;
-      --ink:#e8e9ea;
-      --ink-soft:#a2a7b0;
-      --rule:#2a2d33;
-      --key:#1c1f24;
-      --accent:#7fb3b5;
+<script>
+(function(){
+  var root = document.documentElement;
+  var buttons = document.querySelectorAll('.switch button');
+
+  function apply(lang){
+    root.setAttribute('data-active', lang);
+    root.setAttribute('lang', lang === 'zh' ? 'zh-Hans' : 'en-GB');
+    for (var i = 0; i < buttons.length; i++){
+      buttons[i].setAttribute('aria-pressed', buttons[i].getAttribute('data-set') === lang ? 'true' : 'false');
     }
   }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-size:17px;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
+
+  for (var i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener('click', function(){
+      apply(this.getAttribute('data-set'));
+      window.scrollTo(0, 0);
+    });
   }
-  .wrap{max-width:44rem;margin:0 auto;padding:3.5rem 1.5rem 6rem}
-  header{border-bottom:1px solid var(--rule);padding-bottom:1.75rem;margin-bottom:2.5rem}
-  .mark{
-    display:inline-block;
-    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    font-size:.8rem;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    background:var(--key);
-    border:1px solid var(--rule);
-    border-radius:6px;
-    padding:.3rem .6rem;
-    margin-bottom:1.25rem;
-  }
-  h1{
-    font-size:2rem;
-    line-height:1.2;
-    font-weight:640;
-    letter-spacing:-.015em;
-    margin:0 0 .75rem;
-  }
-  .meta{
-    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    font-size:.8rem;
-    color:var(--ink-soft);
-    margin:0;
-  }
-  h2{
-    font-size:1.05rem;
-    font-weight:660;
-    letter-spacing:-.005em;
-    margin:2.75rem 0 .85rem;
-    padding-top:1.25rem;
-    border-top:1px solid var(--rule);
-  }
-  h2:first-of-type{border-top:0;padding-top:0}
-  p{margin:0 0 1.05rem}
-  ul{margin:0 0 1.05rem;padding-left:1.15rem}
-  li{margin-bottom:.45rem}
-  strong{font-weight:640}
-  a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;word-break:break-word}
-  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-  .lede{font-size:1.06rem;color:var(--ink-soft)}
-  footer{
-    margin-top:3.5rem;
-    padding-top:1.5rem;
-    border-top:1px solid var(--rule);
-    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    font-size:.78rem;
-    color:var(--ink-soft);
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
 
-<header>
-  <span class="mark">HProductions</span>
-  <h1>HKeyboard Privacy Policy</h1>
-  <p class="meta">Last updated: 26 August 2026</p>
-</header>
+  // Honour ?lang=zh, then fall back to the browser's preferred language.
+  var q = (location.search.match(/[?&]lang=([a-z-]+)/i) || [])[1];
+  if (q && q.toLowerCase().indexOf('zh') === 0) { apply('zh'); }
+  else if (!q && (navigator.language || '').toLowerCase().indexOf('zh') === 0) { apply('zh'); }
+})();
+</script>
 
-<p class="lede">HKeyboard is a keyboard app. Keyboards see everything you type, so we have built this one to keep your typing on your device. There is no account, no sign-in, no analytics, no advertising and no tracking of any kind.</p>
+<noscript>
+  <style>[data-lang]{display:block !important}.switch{display:none}</style>
+</noscript>
 
-<h2>Summary</h2>
-<ul>
-  <li>We do not collect, transmit or sell your personal data.</li>
-  <li>Everything you type stays on your device.</li>
-  <li>The app contains no analytics, telemetry, advertising or tracking libraries.</li>
-  <li>The only network activity is optional and user-initiated, and is described below.</li>
-</ul>
-
-<h2>What HKeyboard stores on your device</h2>
-<p>The following are held in the app's private storage on your phone. They are not uploaded anywhere and are not readable by other apps.</p>
-<p><strong>Personal dictionary.</strong> To improve prediction and autocorrect, HKeyboard learns words and word pairs you type. This learning happens entirely on your device. You can clear the personal dictionary at any time from Settings.</p>
-<p><strong>Clipboard history.</strong> If you enable the clipboard panel, HKeyboard stores recently copied items so you can paste them again. Items are stored locally, can be deleted individually, and the whole history can be cleared from Settings. If you do not enable the feature, no clipboard history is kept.</p>
-<p><strong>Snippets.</strong> HKeyboard can offer to save frequently typed text such as an email address or phone number. Snippets are only saved when you explicitly accept the offer &mdash; nothing is saved automatically. Snippets are stored locally and can be deleted at any time.</p>
-<p><strong>Settings and preferences.</strong> Your chosen theme, languages, layout and behaviour options.</p>
-
-<h2>What HKeyboard does not do</h2>
-<ul>
-  <li>It does not record or transmit your keystrokes.</li>
-  <li>It does not learn from or store text in password fields, and it does not offer autocorrect or predictions in them.</li>
-  <li>It does not save payment card numbers, one-time codes or other sensitive input as snippets.</li>
-  <li>It does not upload your personal dictionary, clipboard or snippets.</li>
-  <li>It does not read your contacts, photos, files, location or call history.</li>
-  <li>It does not contain analytics or crash-reporting services.</li>
-</ul>
-
-<h2>Incognito mode</h2>
-<p>When incognito mode is on, HKeyboard does not add anything you type to the personal dictionary or clipboard history. Prediction and autocorrect continue to work using the existing dictionary. Turning incognito mode on does not delete data already saved.</p>
-
-<h2>Network activity</h2>
-<p>HKeyboard works fully offline. There are only two situations in which it uses the internet, and both are optional.</p>
-<p><strong>Downloadable dictionaries.</strong> If you choose to download an expanded dictionary for a language, HKeyboard fetches a dictionary file from a fixed address on GitHub (<a href="https://github.com/GBTechReviews/harmonikeyboard-dicts">github.com/GBTechReviews/harmonikeyboard-dicts</a>). This is a plain download request. No information about you, your device or your typing is sent with it. Downloads never start on their own &mdash; only when you tap to download. GitHub, as the host, may log the request in the ordinary way any web server does; this is outside our control and we do not receive those logs.</p>
-<p><strong>Handwriting recognition models.</strong> If you use handwriting input, the app may need to download a recognition model. The download is handled by Google ML Kit and comes from Google's servers. Once the model is on your device, all handwriting recognition happens on your device &mdash; your handwriting is not sent anywhere. The model download is subject to <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
-<p>If you never use these features, HKeyboard makes no network connections at all.</p>
-
-<h2>Voice input</h2>
-<p>If you use voice input, HKeyboard requests microphone access and converts your speech to text. Audio is processed for the purpose of transcription only. HKeyboard does not record, store or transmit your audio, and does not keep transcripts. Microphone access is used only while you are actively using voice input, and you can decline or revoke the permission at any time in your phone's settings; the rest of the keyboard continues to work normally without it.</p>
-
-<h2>Permissions</h2>
-<ul>
-  <li><strong>Internet</strong> &mdash; used only for the optional downloads described above.</li>
-  <li><strong>Microphone</strong> &mdash; used only for voice input, and only while voice input is active.</li>
-  <li><strong>Vibrate</strong> &mdash; used for key-press haptic feedback, if you enable it.</li>
-</ul>
-
-<h2>Children</h2>
-<p>HKeyboard is not directed at children and we do not knowingly collect any data from anyone, including children.</p>
-
-<h2>Your rights</h2>
-<p>Because we hold no data about you, there is nothing for us to disclose, correct or delete on your behalf. All data the app creates lives on your device and is under your control: clear it from Settings, or uninstall the app to remove all of it.</p>
-
-<h2>Changes to this policy</h2>
-<p>If this policy changes, the updated version will be published at this address with a new date at the top. Material changes will also be noted in the app's changelog.</p>
-
-<h2>Contact</h2>
-<p>Questions about this policy: <a href="mailto:huaweiproreview@gmail.com</a></p>
-
-<footer>HKeyboard &mdash; HProductions</footer>
-
-</div>
 </body>
-</html>
 </html>
